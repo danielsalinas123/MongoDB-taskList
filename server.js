@@ -13,9 +13,10 @@ app.get("/",(req,res)=>
         const users=db.collection("users");
         
         //Read
-        // const query={age:32};
-        // const user=await users.findOne(query);
-        // res.json(user);
+        const query={};
+        const user=await users.find(query).toArray();
+        res.json(user);
+        console.log(user);
 
         //create
         // const newUser={name:"Antonio Ricaute",age:69};
@@ -29,9 +30,9 @@ app.get("/",(req,res)=>
         // res.json(result);
 
         //Delete
-        const filter={name:"Daniel Salinas Jaramillo"};
-        const result=await users.deleteOne(filter);
-        res.json(result);
+        // const filter={name:"Daniel Salinas Jaramillo"};
+        // const result=await users.deleteOne(filter);
+        // res.json(result);
 
     });
 });

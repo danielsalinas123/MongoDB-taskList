@@ -2,8 +2,8 @@ const {MongoClient}=require("mongodb");
 const env=require("dotenv");
 env.config();
 
-const dbName="Clase";
-const client=new MongoClient(process.env.MONGO_ATLAS);
+const dbName="taskList";
+const client=new MongoClient(process.env.MONGO_URI);
 
 const connect=async ()=>
 {
